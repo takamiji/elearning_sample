@@ -3,7 +3,7 @@ from PIL import Image
 from components.comments import comment_block
 
 def load_markdown(section_index):
-    paths = ["content/section1.md", "content/section2.md"]
+    paths = ["content/section0.md","content/section1.md", "content/section2.md"]
     with open(paths[section_index], "r", encoding="utf-8") as f:
         return f.read()
 
@@ -11,6 +11,7 @@ st.set_page_config(layout="wide")
 
 # セクション一覧
 sections = [
+    "この教材でできるようになること（学習目標）",
     "Webサービスの登場人物とその役割は何だろう？",
     "登場人物同士はどんなやり取りをしているのだろう？"
 ]
@@ -37,12 +38,11 @@ image1 = Image.open("images/Webサービスの登場人物.png")
 image2_1 = Image.open("images/HTTPリクエスト.png")
 image2_2 = Image.open("images/HTTPレスポンス.png")
 
-
 if selected_section == sections[0]:
     st.markdown(load_markdown(0), unsafe_allow_html=True)
-    
+elif selected_section == sections[1]:
+    st.markdown(load_markdown(1), unsafe_allow_html=True)
     st.image(image1, caption="Webサービスの登場人物",  width=600)    
-    
     st.markdown("""
 ---
 ### まとめ
@@ -54,8 +54,8 @@ Webサービスは「1つの大きな仕組み」ではなく、複数の登場�
     comment_block("section0")
     st.markdown("""---""") 
 
-elif selected_section == sections[1]:
-    st.markdown(load_markdown(1), unsafe_allow_html=True)
+elif selected_section == sections[2]:
+    st.markdown(load_markdown(2), unsafe_allow_html=True)
     st.image(image2_1, caption="HTTPリクエスト",  width=600)  
     st.image(image2_2, caption="HTTPレスポンス",  width=600)  
     st.markdown("""
