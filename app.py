@@ -1,6 +1,7 @@
 import streamlit as st
 from PIL import Image
 from components.comments import comment_block
+from content.test import show_quiz
 
 def load_markdown(section_index):
     paths = ["content/section0.md","content/section1.md", "content/section2.md"]
@@ -13,7 +14,8 @@ st.set_page_config(layout="wide")
 sections = [
     "この教材でできるようになること（学習目標）",
     "Webサービスの登場人物とその役割は何だろう？",
-    "登場人物同士はどんなやり取りをしているのだろう？"
+    "登場人物同士はどんなやり取りをしているのだろう？",
+    "確認テスト" 
 ]
 
 # 初期状態の保持
@@ -71,6 +73,8 @@ elif selected_section == sections[2]:
     st.markdown("""---""") 
     comment_block("section2")
     st.markdown("""---""")       
+elif selected_section == sections[3]:
+    show_quiz()
 
 # 完了ボタン
 if not st.session_state.completed[selected_section]:
