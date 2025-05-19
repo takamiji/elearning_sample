@@ -52,7 +52,6 @@ elif selected_section == sections[1]:
 Webサービスは「1つの大きな仕組み」ではなく、複数の登場人物が分業して支えているのです。  
 それぞれの役割を理解することで、後の学習（DOM・HTTP・DBなど）もスムーズになります。
 """)
-    st.markdown("""---""") 
 
 elif selected_section == sections[2]:
     st.markdown(load_markdown(2), unsafe_allow_html=True)
@@ -68,7 +67,7 @@ elif selected_section == sections[2]:
 - 普段は見えないけれど、検索ボタン1つでたくさんのやり取りが同時に動いているのです。
 
 """)
-    st.markdown("""---""") 
+
    
 elif selected_section == sections[3]:
     show_quiz()
@@ -78,6 +77,7 @@ if selected_section != "確認テスト":
     if not st.session_state.completed[selected_section]:
         if st.button("✅ このセクションを完了する"):
             st.session_state.completed[selected_section] = True
+            st.markdown("""---""") 
     else:
         st.info("このセクションは完了済みです。")
 
