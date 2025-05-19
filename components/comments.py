@@ -44,6 +44,5 @@ def comment_block(section_id: str):
         for item in reversed(comments):
             st.markdown(f"**{item['name']}**")
             st.write(item['comment'])
-            st.markdown("---")
     else:
         st.info("まだコメントはありません。")
