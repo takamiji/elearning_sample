@@ -51,7 +51,7 @@ Webサービスは「1つの大きな仕組み」ではなく、複数の登場�
 それぞれの役割を理解することで、後の学習（DOM・HTTP・DBなど）もスムーズになります。
 """)
     st.markdown("""---""") 
-    comment_block("section0")
+    comment_block("section1")
     st.markdown("""---""") 
 
 elif selected_section == sections[2]:
@@ -69,7 +69,7 @@ elif selected_section == sections[2]:
 
 """)
     st.markdown("""---""") 
-    comment_block("section1")
+    comment_block("section2")
     st.markdown("""---""")       
 
 # 完了ボタン
