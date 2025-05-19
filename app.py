@@ -33,11 +33,15 @@ selected_section = st.session_state.current_section
 st.title(selected_section)
 
 # コンテンツ
-image = Image.open("images/Webサービスの登場人物.png")
+image1 = Image.open("images/Webサービスの登場人物.png")
+image2_1 = Image.open("images/HTTPリクエスト.png")
+image2_2 = Image.open("images/HTTPレスポンス.png")
+
+
 if selected_section == sections[0]:
     st.markdown(load_markdown(0), unsafe_allow_html=True)
     
-    st.image(image, caption="Webサービスの登場人物",  width=600)    
+    st.image(image1, caption="Webサービスの登場人物",  width=600)    
     
     st.markdown("""
 ---
@@ -52,6 +56,8 @@ Webサービスは「1つの大きな仕組み」ではなく、複数の登場�
 
 elif selected_section == sections[1]:
     st.markdown(load_markdown(1), unsafe_allow_html=True)
+    st.image(image2_1, caption="HTTPリクエスト",  width=600)  
+    st.image(image2_2, caption="HTTPレスポンス",  width=600)  
     st.markdown("""
 ---
 
