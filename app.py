@@ -76,14 +76,14 @@ elif selected_section == sections[2]:
 elif selected_section == sections[3]:
     show_quiz()
 
-# 完了ボタン
-if not st.session_state.completed[selected_section]:
-    if st.button("✅ このセクションを完了する"):
-        st.session_state.completed[selected_section] = True
-        st.success("完了として記録しました！")
-else:
-    st.info("このセクションは完了済みです。")
-
+# 完了ボタンの表示（"確認テスト" 以外）
+if selected_section != "確認テスト":
+    if not st.session_state.completed[selected_section]:
+        if st.button("✅ このセクションを完了する"):
+            st.session_state.completed[selected_section] = True
+    else:
+        st.info("このセクションは完了済みです。")
+        
 # 進捗表示
 completed_count = sum(st.session_state.completed.values())
 total = len(sections)
