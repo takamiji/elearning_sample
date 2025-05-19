@@ -1,4 +1,5 @@
 import streamlit as st
+from components.utils import show_progress, SECTIONS, mark_section_complete_if_all_correct
 
 def show_quiz():
     st.write("この教材の内容をもとに、以下の質問に答えてください。")
@@ -51,6 +52,7 @@ def show_quiz():
                     score += 1
             st.session_state.quiz_score = score
             st.session_state.quiz_submitted = True
+            mark_section_complete_if_all_correct("確認テスト", score, len(questions))
 
             # ✅ 満点ならこのセクションを完了として記録
             if 'completed' not in st.session_state:
