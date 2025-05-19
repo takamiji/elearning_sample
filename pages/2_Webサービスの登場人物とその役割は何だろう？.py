@@ -8,7 +8,7 @@ image = Image.open("images/Webサービスの登場人物.png")
 
 st.title("この教材でできるようになること")
 
-with Path("content/section0.md").open(encoding="utf-8") as f:
+with Path("content/section1.md").open(encoding="utf-8") as f:
     st.markdown(f.read(), unsafe_allow_html=True)
 
 # コンテンツ
@@ -20,6 +20,6 @@ section_complete_button("Webサービスの登場人物とその役割は何だ�
 # コメント欄（任意）
 try:
     from components.comments import comment_block
-    comment_block("section0")
+    comment_block("section1")
 except ImportError:
     st.info("コメント機能が未定義です。components/comments.py を確認してください。")
