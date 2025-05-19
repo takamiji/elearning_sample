@@ -77,7 +77,7 @@ if selected_section != "確認テスト":
     if not st.session_state.completed[selected_section]:
         if st.button("✅ このセクションを完了する"):
             st.session_state.completed[selected_section] = True
-            st.markdown("""---""") 
+        st.markdown("""---""") 
     else:
         st.info("このセクションは完了済みです。")
 
