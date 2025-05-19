@@ -53,8 +53,6 @@ Webサービスは「1つの大きな仕組み」ではなく、複数の登場�
 それぞれの役割を理解することで、後の学習（DOM・HTTP・DBなど）もスムーズになります。
 """)
     st.markdown("""---""") 
-    comment_block("section1")
-    st.markdown("""---""") 
 
 elif selected_section == sections[2]:
     st.markdown(load_markdown(2), unsafe_allow_html=True)
@@ -71,8 +69,7 @@ elif selected_section == sections[2]:
 
 """)
     st.markdown("""---""") 
-    comment_block("section2")
-    st.markdown("""---""")       
+   
 elif selected_section == sections[3]:
     show_quiz()
 
@@ -83,7 +80,19 @@ if selected_section != "確認テスト":
             st.session_state.completed[selected_section] = True
     else:
         st.info("このセクションは完了済みです。")
-        
+
+
+# コメント
+if selected_section == sections[0]:
+    pass
+elif selected_section == sections[1]:
+    comment_block("section1") 
+elif selected_section == sections[2]:
+    comment_block("section2") 
+elif selected_section == sections[3]:
+    pass
+
+
 # 進捗表示
 completed_count = sum(st.session_state.completed.values())
 total = len(sections)
